@@ -1,0 +1,17 @@
+students={
+   "name":"sai",
+    "age":23,
+    "course":"python",
+    "salary":22000,
+}
+print(students["name"])
+print(students["age"])
+students["age"]=25
+students["salary"]=28000
+print(students)
+print(students.get("age"))
+print(students)
+print(students.pop("salary"))
+print(students.popitem())
+print(students.keys())
+print(students.values())
