@@ -116,13 +116,13 @@ def save_students_json(students):
 
 
 #sample objects create
-s1 = Student("S101", "Ananya Sharma", "Computer Science", 4, [78, 85, 90, 88, 92])
-s2 = Student("S102", "Rohan Verma", "Computer Science", 4, [70, 72, 75, 78, 74])
+s1 = Student("S11", "Akash", "Computer Science", 4, [78, 85, 90, 88, 92])
+s2 = Student("S12", "Ranga", "Aero space", 4, [70, 72, 75, 78, 74])
 
-f1 = Faculty("F201", "Dr. Rajesh Kumar", "Computer Science", 85000)
+f1 = Faculty("F01", "Dr.Kumar", "Computer Science", 85000)
 
-c1 = Course("CS401", "Data Structures", 4, f1)
-c2 = Course("CS402", "Algorithms", 3, f1)
+c1 = Course("CS41", "Data Structures", 4, f1)
+c2 = Course("CS42", "Algorithms", 3, f1)
 
 #polymorphism
 print("Student Details\n----------------------------")

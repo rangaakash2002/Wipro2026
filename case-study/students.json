@@ -1,7 +1,7 @@
 [
     {
-        "id": "S101",
-        "name": "Ananya Sharma",
+        "id": "S11",
+        "name": "Akash",
         "department": "Computer Science",
         "semester": 4,
         "marks": [
@@ -13,9 +13,9 @@
         ]
     },
     {
-        "id": "S102",
-        "name": "Rohan Verma",
-        "department": "Computer Science",
+        "id": "S12",
+        "name": "Ranga",
+        "department": "Aero space",
         "semester": 4,
         "marks": [
             70,
