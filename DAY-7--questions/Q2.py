@@ -90,5 +90,5 @@ def delete_item(item_id):
 # -----------------------------
 # Run the application
 # -----------------------------
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True,port=5004)
