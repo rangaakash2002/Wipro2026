@@ -1,86 +1,288 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.11.5 on win32)" generated="2026-02-02T21:30:41.703373" rpa="false" schemaversion="5">
-<suite id="s1" name="TC009-flaskapi" source="C:\Users\Akhila\Desktop\wiprogitcode\Wipro2026\Robotfile\DAY-14\TC009-flaskapi.robot">
-<kw name="Create API Session" type="SETUP">
-<kw name="Create Session">
-<msg time="2026-02-02T21:30:41.815513" level="FAIL">No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<status status="FAIL" start="2026-02-02T21:30:41.815513" elapsed="0.000000">No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
+<robot generator="Robot 7.4.1 (Python 3.11.5 on win32)" generated="2026-02-02T21:02:34.738572" rpa="false" schemaversion="5">
+<suite id="s1" name="DAY-13-q2" source="C:\Users\Akhila\Desktop\wiprogitcode\Wipro2026\Robotfile\DAY-13\DAY-13-q2.robot">
+<kw name="Open Application" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:02:35.176824" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T21:02:35.176824" elapsed="9.142017"/>
 </kw>
-<status status="FAIL" start="2026-02-02T21:30:41.812506" elapsed="0.003999">No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T21:02:44.318841" elapsed="0.126501"/>
 </kw>
-<test id="s1-t1" name="Get Home Page" line="16">
-<status status="FAIL" start="2026-02-02T21:30:41.816505" elapsed="0.000000">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
+<status status="PASS" start="2026-02-02T21:02:35.175786" elapsed="9.270550"/>
+</kw>
+<test id="s1-t1" name="Login Test From CSV" line="52">
+<kw name="Login Using Keywords">
+<kw name="Enter Username">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T21:02:44.449323" elapsed="1.149577"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:02:45.598900" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:02:45.598900" elapsed="0.206941"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-02-02T21:02:44.449323" elapsed="1.356518"/>
+</kw>
+<kw name="Enter Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:02:45.807835" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:02:45.806838" elapsed="0.205120"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-02-02T21:02:45.806838" elapsed="0.206118"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:02:46.013952" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:02:46.013952" elapsed="0.095292"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:02:46.012956" elapsed="0.096288"/>
+</kw>
+<kw name="Verify Result">
+<if>
+<branch type="IF" condition="'${expected}' == 'pass'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T21:02:46.110245" elapsed="10.398361"/>
+</kw>
+<kw name="Logout From Application">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:02:56.509604" level="INFO">Clicking element 'xpath=//span[@class='oxd-userdropdown-tab']'.</msg>
+<arg>xpath=//span[@class='oxd-userdropdown-tab']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:02:56.509604" elapsed="0.054401"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Logout']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T21:02:56.565005" elapsed="0.241858"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:02:56.806863" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:02:56.806863" elapsed="7.148849"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T21:03:03.955712" elapsed="0.888061"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:02:56.508606" elapsed="8.335167"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:02:46.109244" elapsed="18.735521"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Invalid credentials</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-02-02T21:03:04.844765" elapsed="0.000000"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="NOT RUN" start="2026-02-02T21:03:04.844765" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T21:03:04.844765" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T21:02:46.109244" elapsed="18.735521"/>
+</if>
+<arg>${expected}</arg>
+<status status="PASS" start="2026-02-02T21:02:46.109244" elapsed="18.735521"/>
+</kw>
+<arg>Admin</arg>
+<arg>admin123</arg>
+<arg>pass</arg>
+<status status="PASS" start="2026-02-02T21:02:44.448334" elapsed="20.396431"/>
+</kw>
+<kw name="Login Using Keywords">
+<kw name="Enter Username">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T21:03:04.846760" elapsed="0.018603"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:03:04.866360" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:03:04.866360" elapsed="0.092856"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-02-02T21:03:04.846760" elapsed="0.113453"/>
+</kw>
+<kw name="Enter Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:03:04.962209" level="INFO">Typing text 'wrong456' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:03:04.961210" elapsed="0.111731"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-02-02T21:03:04.960213" elapsed="0.112728"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:03:05.073941" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:03:05.073941" elapsed="2.126759"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:03:05.072941" elapsed="2.127759"/>
+</kw>
+<kw name="Verify Result">
+<if>
+<branch type="IF" condition="'${expected}' == 'pass'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-02-02T21:03:07.201696" elapsed="0.000000"/>
+</kw>
+<kw name="Logout From Application">
+<status status="NOT RUN" start="2026-02-02T21:03:07.201696" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T21:03:07.201696" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Invalid credentials</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T21:03:07.202702" elapsed="0.891517"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2026-02-02T21:03:08.094219" elapsed="1.373720"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:03:07.201696" elapsed="2.267241"/>
+</branch>
+<status status="PASS" start="2026-02-02T21:03:07.201696" elapsed="2.267241"/>
+</if>
+<arg>${expected}</arg>
+<status status="PASS" start="2026-02-02T21:03:07.201696" elapsed="2.267241"/>
+</kw>
+<arg>Admin</arg>
+<arg>wrong456</arg>
+<arg>fail</arg>
+<status status="PASS" start="2026-02-02T21:03:04.845763" elapsed="4.623174"/>
+</kw>
+<kw name="Login Using Keywords">
+<kw name="Enter Username">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T21:03:09.469935" elapsed="2.132018"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:03:11.602951" level="INFO">Typing text 'Wrong' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:03:11.602951" elapsed="0.066233"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-02-02T21:03:09.469935" elapsed="2.199249"/>
+</kw>
+<kw name="Enter Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:03:11.670180" level="INFO">Typing text 'admin789' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:03:11.670180" elapsed="0.096888"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-02-02T21:03:11.669184" elapsed="0.097884"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T21:03:11.768072" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T21:03:11.768072" elapsed="0.063707"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:03:11.768072" elapsed="0.063707"/>
+</kw>
+<kw name="Verify Result">
+<if>
+<branch type="IF" condition="'${expected}' == 'pass'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-02-02T21:03:11.832776" elapsed="0.000000"/>
+</kw>
+<kw name="Logout From Application">
+<status status="NOT RUN" start="2026-02-02T21:03:11.832776" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T21:03:11.831779" elapsed="0.000997"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Invalid credentials</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T21:03:11.832776" elapsed="4.920614"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2026-02-02T21:03:16.753390" elapsed="1.286886"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:03:11.832776" elapsed="6.207500"/>
+</branch>
+<status status="PASS" start="2026-02-02T21:03:11.831779" elapsed="6.208497"/>
+</if>
+<arg>${expected}</arg>
+<status status="PASS" start="2026-02-02T21:03:11.831779" elapsed="6.208497"/>
+</kw>
+<arg>Wrong</arg>
+<arg>admin789</arg>
+<arg>fail</arg>
+<status status="PASS" start="2026-02-02T21:03:09.468937" elapsed="8.571339"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:02:44.446336" elapsed="33.594928"/>
 </test>
-<test id="s1-t2" name="Get All Users" line="20">
-<status status="FAIL" start="2026-02-02T21:30:41.817500" elapsed="0.000998">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<test id="s1-t3" name="Create User" line="26">
-<status status="FAIL" start="2026-02-02T21:30:41.819495" elapsed="0.000997">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<test id="s1-t4" name="Get Created User" line="32">
-<status status="FAIL" start="2026-02-02T21:30:41.820492" elapsed="0.000999">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<test id="s1-t5" name="Update User Using PUT" line="37">
-<status status="FAIL" start="2026-02-02T21:30:41.821491" elapsed="0.001399">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<test id="s1-t6" name="Partial Update Using PATCH" line="43">
-<status status="FAIL" start="2026-02-02T21:30:41.823882" elapsed="0.000000">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<test id="s1-t7" name="Delete User" line="49">
-<status status="FAIL" start="2026-02-02T21:30:41.823882" elapsed="0.000995">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<test id="s1-t8" name="Get Deleted User (Negative Test)" line="53">
-<status status="FAIL" start="2026-02-02T21:30:41.825874" elapsed="0.000000">Parent suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
-</test>
-<status status="FAIL" start="2026-02-02T21:30:41.705367" elapsed="0.122507">Suite setup failed:
-No keyword with name 'Create Session' found. Did you mean:
-    Create API Session</status>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T21:03:18.042007" elapsed="2.499225"/>
+</kw>
+<status status="PASS" start="2026-02-02T21:02:34.740565" elapsed="45.800667"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="8" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TC009-flaskapi" id="s1" pass="0" fail="8" skip="0">TC009-flaskapi</stat>
+<stat name="DAY-13-q2" id="s1" pass="1" fail="0" skip="0">DAY-13-q2</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-02-02T21:30:41.766012" level="ERROR">Error in file 'C:\Users\Akhila\Desktop\wiprogitcode\Wipro2026\Robotfile\DAY-14\TC009-flaskapi.robot' on line 3: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\Akhila\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts\robot.exe
-  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\python311.zip
-  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\DLLs
-  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib
-  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0
-  C:\Users\Akhila\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages
-  C:\Users\Akhila\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\win32
-  C:\Users\Akhila\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\win32\lib
-  C:\Users\Akhila\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\Pythonwin
-  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\site-packages</msg>
 </errors>
 </robot>
