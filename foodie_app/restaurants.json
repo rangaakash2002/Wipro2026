@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "Food Hub",
+        "category": "Veg",
+        "location": "Hyderabad",
+        "images": "image.png",
+        "contact": 9876543210,
+        "approved": false,
+        "active": true
+    }
+]
